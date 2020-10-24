@@ -42,6 +42,7 @@ func DoServer(config []Config) {
 			// 处理进来的连接
 			defer conn.Close()
 			forw := getforward()
+			log.Println(forw)
 			fconn, err := net.Dial("tcp", forw)
 			if err != nil {
 				log.Println(err)
